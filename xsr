@@ -188,6 +188,7 @@ sub handletypingstate { # called by non-typing events
 sub takescreenshot {
 	system("xdotool getmouselocation >> mousegrabs &") if $xdotool && $composite;
 	system("scrot $screeni.$imgext -M 0 &");
+	# Was added the argument -M 0, to screenshot just the first display. For default, if are two displays, the image of two are screenshoted.
 	return $screeni++;
 }
 
